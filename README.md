@@ -1,2 +1,2 @@
 # Billing_Management_System
-Billing Management System using SWINGS and JDBC
+A GUI Based Complete Billing Management System Application in java that generates Invoice of each sale.
