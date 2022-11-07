@@ -8,6 +8,7 @@ import Project.ConnectionProvider;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import static com.itextpdf.text.pdf.security.LtvVerification.CertificateInclusion.NO;
 import com.lowagie.text.pdf.PdfTable;
 import java.io.FileOutputStream;
 import java.sql.Connection;
@@ -397,7 +398,7 @@ public class billing extends javax.swing.JFrame {
         try {
             Connection con=ConnectionProvider.getCon();
             Statement st=con.createStatement();
-            ResultSet rs=st.executeQuery("SELECT * FROM product WHERE pId='"+pId+"'");
+            ResultSet rs=st.executeQuery("SELECT * FROM product WHERE pId='"+pId+"' and activate='YES' ");
             if(rs.next()){
                 jTextField6.setText(rs.getString(2));
                 jTextField7.setText(rs.getString(3));;
